@@ -13,7 +13,7 @@ parse_section()
     [[ "${line% =*}" == "$param" ]] && { echo "${line#*= }"; break; }
   done
 }
-path_dataset=$(parse_section $HOSTNAME path_dataset < ./config.ini)
+path_dataset='/content/'
 if [[ ! -d $path_dataset ]]; then
   mkdir $path_dataset
 fi
