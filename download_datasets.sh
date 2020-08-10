@@ -13,7 +13,7 @@ parse_section()
     [[ "${line% =*}" == "$param" ]] && { echo "${line#*= }"; break; }
   done
 }
-path_dataset='/content/'
+path_dataset='/content/doodle2search/Data'
 if [[ ! -d $path_dataset ]]; then
   mkdir $path_dataset
 fi
