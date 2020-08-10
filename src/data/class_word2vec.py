@@ -12,8 +12,8 @@ def create_class_embeddings(vocab, dataset = 'sketchy'):
         print(voca)
         w2v_class.append(np.array(model[voca]))
     w2v_class = np.array(w2v_class)
-    filename_semantic = './data/semantic_labels_'+ dataset + '.npy'
-    filename_vocab = './data/vocab_' + dataset + '.pkl'
+    filename_semantic = './src/data/semantic_labels_'+ dataset + '.npy'
+    filename_vocab = './src/data/vocab_' + dataset + '.pkl'
     np.save(filename_semantic, w2v_class)
     pickle.dump(vocab, open(filename_vocab, 'wb'))
 
