@@ -210,7 +210,8 @@ def main():
             logger.add_scalar('map_valid', map_valid)
             logger.add_scalar('learning_rate', args.learning_rate)
             logger.step()
-        
+        if epoch%10==0:
+          model.save(model.state_dict(), "/content/thedrive/My\ Drive/para.pt")
         # Early-Stop
         if map_valid > best_map:
             best_map = map_valid
