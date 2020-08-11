@@ -31,8 +31,8 @@ def TUBerlin_Extended(args, transform='None'):
     np.random.seed(args.seed)
 
     # Create the class embeddings
-    if os.path.isfile('./data/semantic_labels_tuberlin.npy'):
-        class_emb = np.load('./data/semantic_labels_tuberlin.npy')
+    if os.path.isfile('./src/data/semantic_labels_tuberlin.npy'):
+        class_emb = np.load('./src/data/semantic_labels_tuberlin.npy')
         with open("./data/vocab_tuberlin.pkl", "rb") as input_file:
             vocab = pickle.load(input_file)
     else:
