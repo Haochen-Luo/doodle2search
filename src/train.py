@@ -1,5 +1,21 @@
 # -*- coding: utf-8 -*- 
 from __future__ import print_function, division
+# args.save should be directory and it will be overwrite by args.log, and it becomes 
+# args.log + '{}_run-batchSize_{}/' \
+#                 .format(len(glob.glob(args.log + '*_run-batchSize_{}'.format(args.batch_size))), args.batch_size)
+
+# args.load is the checkpoint file's path
+# I should create the args.save dir and a file in this dir named checkpoint.pth
+"""
+best_model_file = os.path.join(args.save, 'checkpoint.pth')
+checkpoint = load_checkpoint(best_model_file)
+
+
+checkpoint = load_checkpoint(args.load)
+
+Therefore, args.load should be the complete path of the checkpoint file
+"""
+
 
 """
 Doodle to Search
