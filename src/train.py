@@ -13,8 +13,13 @@ checkpoint = load_checkpoint(best_model_file)
 
 checkpoint = load_checkpoint(args.load)
 
-Therefore, args.load should be the complete path of the checkpoint file
+1. Therefore, args.load should be the complete path of the checkpoint file
+
+2. save_checkpoint the filename should be without pth extension
+
 """
+
+
 
 
 """
@@ -227,7 +232,9 @@ def main():
             logger.add_scalar('learning_rate', args.learning_rate)
             logger.step()
         if epoch%10==0:
-          model.save(model.state_dict(), "/content/thedrive/My\ Drive/para.pt")
+          print('saving',epoch)
+          save_checkpoint({'epoch': epoch + 1, 'im_state': im_net.state_dict(), 'sk_state': sk_net.state_dict(), 'criterion': criterion.state_dict(), 'best_map': best_map}, directory='/content/thedrive/My\ Drive', file_name='checkpoint1')
+          
         # Early-Stop
         if map_valid > best_map:
             best_map = map_valid
