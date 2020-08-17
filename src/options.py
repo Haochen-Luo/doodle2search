@@ -36,7 +36,7 @@ class Options():
         parser.add_argument('--gamma', type=float, default=0.1, help='LR is multiplied by gamma on schedule.')
         parser.add_argument('--seed', type=int, default=42, help='Random seed.')
         parser.add_argument('--save', '-s', type=str, default='/content/thedrive/My Drive', help='Folder to save checkpoints.')
-        parser.add_argument('--load', '-l', type=str, default=None, help='Checkpoint path to resume / test.')
+        parser.add_argument('--load', '-l', type=str, default='/content/thedrive/My Drive/checkpoint1.pth', help='Checkpoint path to resume / test.')
         parser.add_argument('--early_stop', '-es', type=int, default=20, help='Early stopping epochs.')
         # Acceleration
         parser.add_argument('--ngpu', type=int, default=1, help='0 = CPU, 1 = CUDA, 1 < DataParallel')
