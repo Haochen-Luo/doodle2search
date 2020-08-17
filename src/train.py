@@ -237,6 +237,7 @@ def main():
           
         # Early-Stop
         if map_valid > best_map:
+            print('Early-Stop')
             best_map = map_valid
             best_epoch = epoch + 1
             early_stop_counter = 0
